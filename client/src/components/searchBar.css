@@ -1,0 +1,28 @@
+.search_container{
+    position: relative;
+    margin-top: 2rem;
+}
+     
+.search{
+    width: 30rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #ECF0F1;
+}
+    
+.button_search{
+    position: absolute;
+    top: 0;
+    right: 424px;
+    height: 100%;
+
+    padding-left: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(45deg, rgb(49, 109, 238), rgb(7, 5, 134));
+}

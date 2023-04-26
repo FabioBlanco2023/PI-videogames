@@ -1,0 +1,68 @@
+.landing_page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../image/imagen4.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_landing {
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-weight: bold;
+    color: var(--glow-color);
+    text-shadow: 
+        1px 2px 0px #a9a0aa,
+        1px 2px 0px #a89fa7,
+        1px 2px 51px var(--glow-spread-color),
+        2px 3px 1px #c7bfbf,
+        2px 3px 2px #040203,
+        2px 4px 52px var(--enhanced-glow-color),
+        3px 5px 2px var(--enhanced-glow-color),
+        3px 5px 3px var(--enhanced-glow-color),
+        3px 5px 3px var(--enhanced-glow-color),
+        5px 6px 2px var(--enhanced-glow-color),
+        6px 6px 2px #050505,
+        7px 6px 2px #000000,
+        7px 7px 1px #696363,
+        7px 7px 1px #080808,
+        7px 7px 0px #201f20,
+        7px 8px 0px #757172;
+    margin-top: 2rem;
+}
+
+.subtitle_landing {
+    text-align: center;
+    justify-content: center;
+    font-size: large;
+    width: 30rem;
+    margin-left: 45rem;
+    margin-top: -0rem;
+    color: white;        
+}
+
+.button_landing {
+    font-size: 1.5rem;
+  background-color: #8983f3;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.button_landing:hover {
+    background: #3a0077;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);   
+    transform: scale(1.1)
+};
+
+
+.button_landing:active {
+    transform: scale(0.9);
+  }

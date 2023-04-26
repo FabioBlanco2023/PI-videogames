@@ -1,0 +1,57 @@
+.card {
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+  
+  .card_image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .card_image:hover {
+    border-color: goldenrod;
+  }
+  
+  .card_game {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8983f3;
+    border-radius: 10px;  
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card_game:hover {
+    opacity: 0.8;
+  }
+  
+  .title_name {
+    margin: 0.5rem 0;
+  text-align: center;
+}
+  
+.title_genre, .title_rating {
+    color:  #424242;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  .genre, .rating {
+    color: #616161 ;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+  }

@@ -1,7 +1,11 @@
 require('dotenv').config();
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
+//const GenresModels = require('./models/Genres');
+//const VideogamesModels = require('./models/Videogame');
+
+// configuración de middleware y rutas aquí...
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
@@ -10,49 +14,10 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
-sequelize.define("videogames", {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  nombre: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false,
-  },
-  descripción: {
-    type: DataTypes.TEXT,
-    allowNull: false,
-  },
-  plataformas: {
-     type: DataTypes.STRING,
-     allowNull: false,
-  },
-  imagen: {
-    type: DataTypes.BLOB,
-  },
-  fecha_de_lanzamiento: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  rating: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-});
-sequelize.define("genres", {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true, 
-  },
-  nombre: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false,  
-  },
-});
+
+//GenresModels(sequelize);
+//VideogamesModels(sequelize)
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -73,10 +38,12 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Videogame } = sequelize.models;
+const { Videogames, Genres } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+Videogames.belongsToMany(Genres, {through: "games_G"});
+Genres.belongsToMany(Videogames, {through: "games_G"});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

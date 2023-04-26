@@ -1,0 +1,51 @@
+body {
+    background-color: #F5F5F5; /* Color de fondo más claro */
+}
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.create_container{
+    
+    margin-top: 3rem;
+    margin-left: 1rem;
+    justify-content: center;  
+    
+}
+
+.button_create_videogame{
+    text-decoration: none;
+    color: #3498DB;
+    background-color: #ECF0F1;
+    justify-content: center;
+    border: 2px solid #7F8C8D;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.reload_container{
+   
+    margin-left: 1rem;
+    
+}
+
+.button_reload{
+    text-decoration: none;
+    color: #3498DB;
+    background-color: #ECF0F1;
+    justify-content: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    outline: none;
+    border: 2px solid #7F8C8D;
+    padding: 0.5rem;
+}
+.pagination {
+    cursor: pointer;
+    padding: 0.5rem;
+}
