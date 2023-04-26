@@ -17,6 +17,8 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+console.log("mensaje");
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 

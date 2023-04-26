@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
@@ -9,6 +9,49 @@ const {
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+});
+sequelize.define("videogames", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  nombre: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false,
+  },
+  descripción: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  plataformas: {
+     type: DataTypes.STRING,
+     allowNull: false,
+  },
+  imagen: {
+    type: DataTypes.BLOB,
+  },
+  fecha_de_lanzamiento: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  rating: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+sequelize.define("genres", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true, 
+  },
+  nombre: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false,  
+  },
 });
 const basename = path.basename(__filename);
 
